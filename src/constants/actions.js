@@ -1,0 +1,10 @@
+const ACTION = {
+    SET_BOOKS: 'SET_BOOKS',
+    ADD_BOOK: 'ADD_BOOK',
+    REMOVE_BOOK: 'REMOVE_BOOK',
+    SET_FILTER: 'FILTER',
+    SET_QUERY: 'SET_QUERY',
+    SET_IS_READY: 'SET_IS_READY'
+};
+
+export default ACTION;
