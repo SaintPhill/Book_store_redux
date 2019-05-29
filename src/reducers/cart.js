@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
             };
         case ACTION.REMOVE_BOOK:
             const index = state.items.findIndex(e => e.id === action.payload.id);
-            const result = state.items.slice();
+            const result = [...state.items];
             result.splice(index, 1);
             return {
                 ...state,
