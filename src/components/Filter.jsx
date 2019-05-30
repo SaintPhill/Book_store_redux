@@ -1,5 +1,6 @@
 import React from 'react'
 import {Menu, Input} from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 const Filter = ({setFilter, filter, searchQuery, setQuery}) => {
     return (
@@ -39,5 +40,12 @@ const Filter = ({setFilter, filter, searchQuery, setQuery}) => {
         </Menu>
     )
 };
+
+Filter.propTypes = {
+  setFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  searchQuery: PropTypes.string.isRequired,
+  setQuery: PropTypes.func.isRequired
+}
 
 export default Filter

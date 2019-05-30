@@ -6,6 +6,7 @@ import BookCard from "../containers/BookCard";
 import Header from "../containers/Header";
 import './App.css'
 import Filter from "../containers/Filter";
+import PropTypes from 'prop-types'
 
 class App extends React.Component {
     componentWillMount() {
@@ -33,5 +34,10 @@ class App extends React.Component {
         );
     }
 }
+App.propTypes = {
+    setBooks: PropTypes.func.isRequired,
+    books: PropTypes.array,
+    isReady: PropTypes.bool.isRequired
+};
 
 export default App;

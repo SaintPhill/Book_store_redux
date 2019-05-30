@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card, Icon, Image, Button} from 'semantic-ui-react'
+import PropTypes from "prop-types";
 
 const BookCard = (props) => {
     let {title, author, price, image} = props.book;
@@ -24,5 +25,14 @@ const BookCard = (props) => {
         </Card>
     )
 };
+
+BookCard.propTypes = {
+    title: PropTypes.string,
+    author: PropTypes.string,
+    price: PropTypes.number,
+    image: PropTypes.string,
+    addBook: PropTypes.func.isRequired,
+    count: PropTypes.number.isRequired
+}
 
 export default BookCard

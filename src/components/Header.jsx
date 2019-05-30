@@ -1,9 +1,11 @@
 import React from 'react'
 import {Menu} from "semantic-ui-react";
 import {Popup, Button, List, Image} from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 const CartList = ({title, image, id, removeBook, books}) => {
     let count = books.reduce((count, item) => count + (item.id === id ? 1 : 0), 0);
+
     return (
         <List selection divided verticalAlign='middle'>
             <List.Item>
@@ -17,11 +19,20 @@ const CartList = ({title, image, id, removeBook, books}) => {
     )
 };
 
+CartList.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  id: PropTypes.number,
+  removeBook: PropTypes.func.isRequired,
+  books: PropTypes.array
+}
+
 const Header = ({totalPrice, count, items, removeBook, books}) => {
     const style = {
         borderRadius: 5,
         opacity: 0.9
     };
+
     return (
         <Menu>
             <Menu.Item>
@@ -50,6 +61,16 @@ const Header = ({totalPrice, count, items, removeBook, books}) => {
         </Menu>
     )
 };
+
+Header.propTypes = {
+  totalPrice: PropTypes.number.isRequired,
+  count: PropTypes.number,
+  items: PropTypes.array,
+  removeBook: PropTypes.func.isRequired,
+  books: PropTypes.array
+}
+
+
 
 export default Header
 
